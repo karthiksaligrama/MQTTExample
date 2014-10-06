@@ -15,6 +15,7 @@
 		4BDF459C19E345D500FBAF61 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BDF459A19E345D500FBAF61 /* LaunchScreen.xib */; };
 		4BDF45A819E345D500FBAF61 /* MQTTExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF45A719E345D500FBAF61 /* MQTTExampleTests.m */; };
 		4BDF45B219E346BD00FBAF61 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BDF45B119E346BD00FBAF61 /* UIKit.framework */; };
+		4BDF45BE19E34D8F00FBAF61 /* MQTT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BDF45BD19E34D8F00FBAF61 /* MQTT.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,8 @@
 		4BDF45A619E345D500FBAF61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4BDF45A719E345D500FBAF61 /* MQTTExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MQTTExampleTests.m; sourceTree = "<group>"; };
 		4BDF45B119E346BD00FBAF61 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4BDF45BA19E34CEC00FBAF61 /* MQTTExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MQTTExample.entitlements; sourceTree = "<group>"; };
+		4BDF45BD19E34D8F00FBAF61 /* MQTT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MQTT.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +53,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BDF45B219E346BD00FBAF61 /* UIKit.framework in Frameworks */,
+				4BDF45BE19E34D8F00FBAF61 /* MQTT.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +89,7 @@
 		4BDF458A19E345D500FBAF61 /* MQTTExample */ = {
 			isa = PBXGroup;
 			children = (
+				4BDF45BA19E34CEC00FBAF61 /* MQTTExample.entitlements */,
 				4BDF458F19E345D500FBAF61 /* AppDelegate.h */,
 				4BDF459019E345D500FBAF61 /* AppDelegate.m */,
 				4BDF459219E345D500FBAF61 /* ViewController.h */,
@@ -126,6 +131,7 @@
 		4BDF45B319E346C200FBAF61 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				4BDF45BD19E34D8F00FBAF61 /* MQTT.framework */,
 				4BDF45B119E346BD00FBAF61 /* UIKit.framework */,
 			);
 			name = Framework;
@@ -180,6 +186,12 @@
 				TargetAttributes = {
 					4BDF458719E345D500FBAF61 = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = FG5A5JUER3;
+						SystemCapabilities = {
+							com.apple.HomeKit = {
+								enabled = 1;
+							};
+						};
 					};
 					4BDF45A019E345D500FBAF61 = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -355,6 +367,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MQTTExample/MQTTExample.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -362,6 +377,7 @@
 				INFOPLIST_FILE = MQTTExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -369,6 +385,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MQTTExample/MQTTExample.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -376,6 +395,7 @@
 				INFOPLIST_FILE = MQTTExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

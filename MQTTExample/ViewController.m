@@ -19,8 +19,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    client = [[MQTTClient alloc]initWithClientId:[[[UIDevice currentDevice] identifierForVendor] UUIDString]];
+    NSString *vendorId = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+    NSLog(@"%@",vendorId);
+    client = [[MQTTClient alloc]initWithClientId:vendorId];
     client.delegate = self;
     [client connectWithHost:@"test.mosquitto.org" withSSL:NO];
     
@@ -48,8 +49,17 @@
     NSString *msgString = [[NSString alloc] initWithData:[message payload] encoding:NSUTF8StringEncoding];
     NSLog(@"message recieved from the remote server");
     NSLog(@"message = %@",msgString);
-    [self.lblMessage setText:msgString];
+    [[NSOperationQueue mainQueue]addOperationWithBlock:^{
+        [self.lblMessage setText:msgString];
+    }];
 }
 
 
+- (IBAction)btnPubMessage:(id)sender {
+    NSString *pubMessage =     [self.txtPubMessage text];
+    
+    NSNumber *messageId = [client publishMessage:[[MQTTMessage alloc] initWithTopic:@"/mqtt/karthik" payload:[pubMessage dataUsingEncoding:NSUTF8StringEncoding] qos:AtLeastOnce]];
+    
+    NSLog(@"confirm of push message id %ld",(long)[messageId integerValue]);
+}
 @end
