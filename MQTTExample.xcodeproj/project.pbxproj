@@ -14,6 +14,7 @@
 		4BDF459919E345D500FBAF61 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BDF459819E345D500FBAF61 /* Images.xcassets */; };
 		4BDF459C19E345D500FBAF61 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BDF459A19E345D500FBAF61 /* LaunchScreen.xib */; };
 		4BDF45A819E345D500FBAF61 /* MQTTExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF45A719E345D500FBAF61 /* MQTTExampleTests.m */; };
+		4BDF45B219E346BD00FBAF61 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BDF45B119E346BD00FBAF61 /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		4BDF45A119E345D500FBAF61 /* MQTTExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MQTTExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BDF45A619E345D500FBAF61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4BDF45A719E345D500FBAF61 /* MQTTExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MQTTExampleTests.m; sourceTree = "<group>"; };
+		4BDF45B119E346BD00FBAF61 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BDF45B219E346BD00FBAF61 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +66,7 @@
 		4BDF457F19E345D500FBAF61 = {
 			isa = PBXGroup;
 			children = (
+				4BDF45B319E346C200FBAF61 /* Framework */,
 				4BDF458A19E345D500FBAF61 /* MQTTExample */,
 				4BDF45A419E345D500FBAF61 /* MQTTExampleTests */,
 				4BDF458919E345D500FBAF61 /* Products */,
@@ -117,6 +121,14 @@
 				4BDF45A619E345D500FBAF61 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4BDF45B319E346C200FBAF61 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				4BDF45B119E346BD00FBAF61 /* UIKit.framework */,
+			);
+			name = Framework;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,6 +355,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MQTTExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -353,6 +369,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MQTTExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import <MQTT/MQTT.h>
 
-@interface ViewController ()
+@interface ViewController ()<MQTTMessageDelegate>{
+    MQTTClient *client;
+}
 
 @end
 
@@ -16,12 +19,37 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    client = [[MQTTClient alloc]initWithClientId:[[[UIDevice currentDevice] identifierForVendor] UUIDString]];
+    client.delegate = self;
+    [client connectWithHost:@"test.mosquitto.org" withSSL:NO];
+    
+    [client subscribeToTopic:@"/mqtt/karthik" qos:AtLeastOnce subscribeHandler:^(NSArray *qosGranted) {
+        NSLog(@"subscription complete");
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - MQTTMessageDelegate
+
+-(void)onPublishMessage:messageId{
+    NSLog(@"message with message id %ld published",(long)[messageId integerValue]);
+}
+
+-(void)onConnected:(MQTTConnectionResponseCode)rc{
+    NSLog(@"mqtt connected to the remote server ");
+    NSLog(@"response code %lu",rc);
+}
+
+-(void)onMessageRecieved:(MQTTMessage *)message{
+    NSString *msgString = [[NSString alloc] initWithData:[message payload] encoding:NSUTF8StringEncoding];
+    NSLog(@"message recieved from the remote server");
+    NSLog(@"message = %@",msgString);
+    [self.lblMessage setText:msgString];
+}
+
 
 @end
