@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B2C267719E369560087E1ED /* MQTT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B2C267619E369560087E1ED /* MQTT.framework */; };
+		4B2C267919E465CC0087E1ED /* mosquitto.org.crt in Resources */ = {isa = PBXBuildFile; fileRef = 4B2C267819E465CC0087E1ED /* mosquitto.org.crt */; };
 		4BDF458E19E345D500FBAF61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF458D19E345D500FBAF61 /* main.m */; };
 		4BDF459119E345D500FBAF61 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF459019E345D500FBAF61 /* AppDelegate.m */; };
 		4BDF459419E345D500FBAF61 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF459319E345D500FBAF61 /* ViewController.m */; };
@@ -15,7 +17,6 @@
 		4BDF459C19E345D500FBAF61 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BDF459A19E345D500FBAF61 /* LaunchScreen.xib */; };
 		4BDF45A819E345D500FBAF61 /* MQTTExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF45A719E345D500FBAF61 /* MQTTExampleTests.m */; };
 		4BDF45B219E346BD00FBAF61 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BDF45B119E346BD00FBAF61 /* UIKit.framework */; };
-		4BDF45BE19E34D8F00FBAF61 /* MQTT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BDF45BD19E34D8F00FBAF61 /* MQTT.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4B2C267619E369560087E1ED /* MQTT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MQTT.framework; sourceTree = "<group>"; };
+		4B2C267819E465CC0087E1ED /* mosquitto.org.crt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mosquitto.org.crt; sourceTree = "<group>"; };
 		4BDF458819E345D500FBAF61 /* MQTTExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MQTTExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BDF458C19E345D500FBAF61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4BDF458D19E345D500FBAF61 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -44,7 +47,6 @@
 		4BDF45A719E345D500FBAF61 /* MQTTExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MQTTExampleTests.m; sourceTree = "<group>"; };
 		4BDF45B119E346BD00FBAF61 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4BDF45BA19E34CEC00FBAF61 /* MQTTExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MQTTExample.entitlements; sourceTree = "<group>"; };
-		4BDF45BD19E34D8F00FBAF61 /* MQTT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MQTT.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +54,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B2C267719E369560087E1ED /* MQTT.framework in Frameworks */,
 				4BDF45B219E346BD00FBAF61 /* UIKit.framework in Frameworks */,
-				4BDF45BE19E34D8F00FBAF61 /* MQTT.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +107,7 @@
 		4BDF458B19E345D500FBAF61 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4B2C267819E465CC0087E1ED /* mosquitto.org.crt */,
 				4BDF458C19E345D500FBAF61 /* Info.plist */,
 				4BDF458D19E345D500FBAF61 /* main.m */,
 			);
@@ -131,7 +134,7 @@
 		4BDF45B319E346C200FBAF61 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
-				4BDF45BD19E34D8F00FBAF61 /* MQTT.framework */,
+				4B2C267619E369560087E1ED /* MQTT.framework */,
 				4BDF45B119E346BD00FBAF61 /* UIKit.framework */,
 			);
 			name = Framework;
@@ -226,6 +229,7 @@
 				4BDF459719E345D500FBAF61 /* Main.storyboard in Resources */,
 				4BDF459C19E345D500FBAF61 /* LaunchScreen.xib in Resources */,
 				4BDF459919E345D500FBAF61 /* Images.xcassets in Resources */,
+				4B2C267919E465CC0087E1ED /* mosquitto.org.crt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,6 +456,7 @@
 				4BDF45AD19E345D500FBAF61 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4BDF45AE19E345D500FBAF61 /* Build configuration list for PBXNativeTarget "MQTTExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -460,6 +465,7 @@
 				4BDF45B019E345D500FBAF61 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

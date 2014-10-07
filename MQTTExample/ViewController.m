@@ -23,11 +23,11 @@
     NSLog(@"%@",vendorId);
     client = [[MQTTClient alloc]initWithClientId:vendorId];
     client.delegate = self;
-    [client connectWithHost:@"test.mosquitto.org" withSSL:NO];
     
-    [client subscribeToTopic:@"/mqtt/karthik" qos:AtLeastOnce subscribeHandler:^(NSArray *qosGranted) {
-        NSLog(@"subscription complete");
-    }];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"mosquitto.org"
+                                                                              ofType:@"crt"];
+    
+    [client connectWithHost:@"test.mosquitto.org" withPort:8884 enableSSL:YES usingSSLCACert:filePath];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,6 +43,12 @@
 -(void)onConnected:(MQTTConnectionResponseCode)rc{
     NSLog(@"mqtt connected to the remote server ");
     NSLog(@"response code %lu",rc);
+    if(rc ==  0){
+        [client subscribeToTopic:@"/mqtt/karthik" qos:AtLeastOnce subscribeHandler:^(NSArray *qosGranted) {
+            NSLog(@"subscription complete");
+        }];
+    }
+    
 }
 
 -(void)onMessageRecieved:(MQTTMessage *)message{
@@ -54,7 +60,6 @@
     }];
 }
 
-
 - (IBAction)btnPubMessage:(id)sender {
     NSString *pubMessage =     [self.txtPubMessage text];
     
@@ -62,4 +67,5 @@
     
     NSLog(@"confirm of push message id %ld",(long)[messageId integerValue]);
 }
+
 @end

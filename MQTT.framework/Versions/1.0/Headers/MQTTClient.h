@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "MQTTMessage.h"
 
+
+
 typedef enum MQTTConnectionResponse:NSUInteger{
     ConnectionAccepted,
     ProtocolViolation,
@@ -49,6 +51,12 @@ typedef void (^MQTTSubscribeHandler)(NSArray *qosGranted);
  * application incase you are not using standard ports
  */
 -(void)connectWithHost:(NSString *)hostName withPort:(int)port enableSSL:(bool)ssl;
+
+/*
+ *
+ *
+ */
+-(void)connectWithHost:(NSString *)hostName withPort:(int)port enableSSL:(bool)ssl usingSSLCACert:(NSString *)certFile;
 
 /*
  * Publish message to the MQTT Server.
