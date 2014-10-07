@@ -44,7 +44,6 @@
 		4BDF45A619E345D500FBAF61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4BDF45A719E345D500FBAF61 /* MQTTExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MQTTExampleTests.m; sourceTree = "<group>"; };
 		4BDF45B119E346BD00FBAF61 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		4BDF45BA19E34CEC00FBAF61 /* MQTTExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MQTTExample.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +87,6 @@
 		4BDF458A19E345D500FBAF61 /* MQTTExample */ = {
 			isa = PBXGroup;
 			children = (
-				4BDF45BA19E34CEC00FBAF61 /* MQTTExample.entitlements */,
 				4BDF458F19E345D500FBAF61 /* AppDelegate.h */,
 				4BDF459019E345D500FBAF61 /* AppDelegate.m */,
 				4BDF459219E345D500FBAF61 /* ViewController.h */,
