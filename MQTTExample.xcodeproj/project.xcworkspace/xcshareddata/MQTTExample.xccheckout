@@ -10,6 +10,8 @@
 	<string>MQTTExample</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>06C3787505A81EB329D5EA22872565C0993B20DA</key>
+		<string>https://github.com/karthiksaligrama/MQTT.git</string>
 		<key>EBA22E17AAC3EA457A300F597ECA21BD086C8459</key>
 		<string>https://github.com/karthiksaligrama/MQTTExample.git</string>
 	</dict>
@@ -17,6 +19,8 @@
 	<string>MQTTExample.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>06C3787505A81EB329D5EA22872565C0993B20DA</key>
+		<string>../../../MQTTFramework</string>
 		<key>EBA22E17AAC3EA457A300F597ECA21BD086C8459</key>
 		<string>../..</string>
 	</dict>
@@ -35,6 +39,14 @@
 			<string>EBA22E17AAC3EA457A300F597ECA21BD086C8459</string>
 			<key>IDESourceControlWCCName</key>
 			<string>MQTTExample</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>06C3787505A81EB329D5EA22872565C0993B20DA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MQTTFramework</string>
 		</dict>
 	</array>
 </dict>
