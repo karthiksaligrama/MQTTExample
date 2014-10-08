@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4B0E86FF19E4A01100E0F559 /* MQTT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B0E86FE19E4A01100E0F559 /* MQTT.framework */; };
+		4B0E870219E5C4AE00E0F559 /* MQTT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B0E870019E5C1A700E0F559 /* MQTT.framework */; };
 		4B2C267919E465CC0087E1ED /* mosquitto.org.crt in Resources */ = {isa = PBXBuildFile; fileRef = 4B2C267819E465CC0087E1ED /* mosquitto.org.crt */; };
 		4BDF458E19E345D500FBAF61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF458D19E345D500FBAF61 /* main.m */; };
 		4BDF459119E345D500FBAF61 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF459019E345D500FBAF61 /* AppDelegate.m */; };
@@ -30,7 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4B0E86FE19E4A01100E0F559 /* MQTT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MQTT.framework; sourceTree = "<group>"; };
+		4B0E870019E5C1A700E0F559 /* MQTT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MQTT.framework; sourceTree = "<group>"; };
 		4B2C267819E465CC0087E1ED /* mosquitto.org.crt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mosquitto.org.crt; sourceTree = "<group>"; };
 		4BDF458819E345D500FBAF61 /* MQTTExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MQTTExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BDF458C19E345D500FBAF61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,7 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B0E86FF19E4A01100E0F559 /* MQTT.framework in Frameworks */,
+				4B0E870219E5C4AE00E0F559 /* MQTT.framework in Frameworks */,
 				4BDF45B219E346BD00FBAF61 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -132,7 +132,7 @@
 		4BDF45B319E346C200FBAF61 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
-				4B0E86FE19E4A01100E0F559 /* MQTT.framework */,
+				4B0E870019E5C1A700E0F559 /* MQTT.framework */,
 				4BDF45B119E346BD00FBAF61 /* UIKit.framework */,
 			);
 			name = Framework;
