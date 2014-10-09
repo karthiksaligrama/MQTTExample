@@ -23,11 +23,8 @@
     NSLog(@"%@",vendorId);
     client = [[MQTTClient alloc]initWithClientId:vendorId];
     client.delegate = self;
-    
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"mosquitto.org"
                                                                               ofType:@"crt"];
-    
-   
     
     NSMutableDictionary *options = [[NSMutableDictionary alloc]init];
     [options setObject:filePath forKey:CA_FILE];

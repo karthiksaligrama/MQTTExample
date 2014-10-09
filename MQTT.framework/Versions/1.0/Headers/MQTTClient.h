@@ -13,6 +13,15 @@
 #define KEY_FILE @"KEY_FILE"
 #define CA_PATH @"CA_PATH"
 #define CA_FILE @"CA_FILE"
+#define CERT_REQD @"CERT_REQD"
+#define TLS_VERSION @"TLS_VERSION"
+#define CIPHERS @"CIPHERS"
+
+typedef enum {
+    TLS1_2_VERSION,
+    TLS1_1_VERSION,
+    TLS1_VERSION
+}TLSVERSION;
 
 typedef enum MQTTConnectionResponse:NSUInteger{
     ConnectionAccepted,
@@ -35,6 +44,13 @@ typedef NSString* (^PasswordCallback)();
  *  Initialize the MQTT Client
  */
 -(MQTTClient *)initWithClientId:(NSString *)client;
+
+/*
+ * Set the username and password for the mosquitto broker to connect
+ * Call this before calling connect method incase you are using username and password
+ *
+ */
+-(void)setUsername:(NSString *)username Password:(NSString *)password;
 
 /*
  * Connect with Hostname
@@ -64,7 +80,7 @@ typedef NSString* (^PasswordCallback)();
 /*
  * Incase you are using self signed certificates. 
  * #warning Donot use in production.
- * call before using connect
+ * call before using connect and after calling setSSLSettings method
  */
 -(void)setSSLInsecure:(BOOL)insecure;
 
@@ -73,6 +89,7 @@ typedef NSString* (^PasswordCallback)();
  * Accepts a dictionary with the following values;
  * CA_PATH,CA_FILE,CERT_FILE,KEY_FILE
  * Set the passwordCallback incase the keyfile is encrypted.
+ * Needs to be called before you call the connect method.
  */
 -(void)setSSLSettings:(NSDictionary *)options passwordCallback:(PasswordCallback) pwdCallback;
 
