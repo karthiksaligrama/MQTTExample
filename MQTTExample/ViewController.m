@@ -27,7 +27,12 @@
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"mosquitto.org"
                                                                               ofType:@"crt"];
     
-    [client connectWithHost:@"test.mosquitto.org" withPort:8883 enableSSL:YES usingSSLCACert:filePath];
+   
+    
+    NSMutableDictionary *options = [[NSMutableDictionary alloc]init];
+    [options setObject:filePath forKey:CA_FILE];
+    [client setSSLSettings:[options copy] passwordCallback:nil];
+    [client connectWithHost:@"test.mosquitto.org" withPort:8883 enableSSL:YES];
 }
 
 - (void)didReceiveMemoryWarning {
